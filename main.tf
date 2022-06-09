@@ -9,7 +9,7 @@ terraform {
 provider "aws" {
   region                  = "us-east-1"
   shared_credentials_file = "~/.aws/credentials"
-  profile                 = "spacelift"
+  
 }
 
 resource "aws_instance" "new_aws_instance"{
