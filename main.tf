@@ -3,11 +3,16 @@ terraform {
     required_providers {
         aws = {
             source = "hashicorp/aws"
-            access_key = AWS_ACCESS_KEY_ID
-            secret_key = AWS_SECRET_ACCESS_KEY
-            region     = us-east-1
         }
     }
+}
+
+provider "aws" {
+  alias  = "east"
+  region = "us-east-1"
+  AWS_ACCESS_KEY_ID = "AWS_ACCESS_KEY_ID"
+  AWS_SECRET_ACCESS_KEY ="AWS_SECRET_ACCESS_KEY"
+
 }
 
 resource "aws_instance" "new_aws_instance"{
